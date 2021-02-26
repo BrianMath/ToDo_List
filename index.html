@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Brian Matheus">
+        <title>Bloco de afazeres</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="to_do">
+            <h1>Lista de afazeres</h1>
+
+            <div id="add_task">
+                <input type="text" name="task" id="task" placeholder="Digite sua tarefa">
+                <input type="button" value="Ok" id="taskOk" onclick="addTask()">
+            </div>
+
+            <div id="tasks">
+                <ul id="tasks_list">
+                    <!--
+                        <li>Texto<span class="delete"><img src="delete_forever.svg"></span></li>
+                    -->
+                </ul>
+            </div>
+        </div>
+
+        <script src="script.js">
+        </script>
+    </body>
+</html>

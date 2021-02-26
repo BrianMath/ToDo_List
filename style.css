@@ -1,0 +1,114 @@
+:root {
+    --corBase: #11bd4a;
+    --cor2: #0e8f39;
+}
+
+body {
+    background-color: #061e70;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Consolas, sans-serif;
+    font-size: 16px;
+}
+
+p {
+    margin: 0;
+}
+
+div#to_do {
+    background-color: var(--corBase);
+    box-shadow: 0 0 10px;
+
+    width: 220px;
+    height: 300px;
+    border-radius: 5px;
+
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#to_do h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+
+    background-color: #1169db;
+}
+
+div#add_task {
+    display: flex;
+}
+
+#add_task #task, #add_task #taskOk {
+    background-color: var(--corBase);
+    outline: 0;
+    border: 0;
+
+    border-bottom: 1px solid black;
+
+    font-family: Consolas, sans-serif;
+    font-size: 1rem;
+}
+
+#add_task #task {
+    width: 100%;
+    height: 25px;
+    padding: 2px 0 0;
+}
+
+#add_task #taskOk {
+    border-left: 1px solid black;
+    cursor: pointer;
+}
+
+#add_task #taskOk:hover {
+    background-color: var(--cor2);
+    color: white;
+
+    transition: 0.2s ease;
+}
+
+div#tasks ul#tasks_list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#tasks_list li {
+    border-bottom: 1px solid white;
+    margin-top: 5px;
+
+    cursor: pointer;
+}
+
+/* Linha atravessada de tarefa concluída */
+#tasks_list li.completed {
+    text-decoration: line-through;
+}
+
+/* Ícone para deletar tarefas */
+
+.delete {
+    float: right;
+    transform: translateX(20px);
+    transition: 0.3s ease-in-out;
+
+    cursor: pointer;
+}
+
+#tasks_list li:hover > .delete {
+    transform: translateX(0);
+}
+
+/* Créditos pelo filtro: https://codepen.io/sosuke/pen/Pjoqqp */
+.delete:hover {
+    filter: invert(22%) sepia(99%) saturate(7449%) hue-rotate(1deg) brightness(96%) contrast(116%);
+}
