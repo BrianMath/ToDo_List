@@ -16,7 +16,7 @@ function addTask() {
         tasksList.appendChild(newTask)
 
         // Função de apagar
-        span.addEventListener("click", function() {
+        span.addEventListener("click", function deleteTask() {
             const parent = this.parentNode
             parent.remove()
         })
@@ -31,6 +31,17 @@ function addTask() {
     }
 }
 
-function deleteTask() {
-    var task = document.querySelector("")
+// Salvamento dos dados
+if (typeof(Storage) !== "undefined") { // Caso seja suportado
+    function saveList() {
+        var tasksList = document.querySelector("ul#tasks_list")
+        localStorage.setItem("Lista", [tasksList.innerHTML])
+    }
+
+    function delList() {
+        localStorage.removeItem("Lista")
+    }
+
+} else { // Caso não seja suportado
+    window.alert("Que pena, seu navegador não suporta o armazenamento na web! :(")
 }

@@ -1,6 +1,7 @@
 :root {
     --corBase: #11bd4a;
     --cor2: #0e8f39;
+    --cor3: #002a1a;
 }
 
 body {
@@ -10,6 +11,7 @@ body {
     height: 100vh;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -29,8 +31,7 @@ div#to_do {
     height: 300px;
     border-radius: 5px;
 
-    overflow: auto;
-    overflow-x: hidden;
+    overflow: hidden auto;
 }
 
 #to_do h1 {
@@ -48,7 +49,7 @@ div#add_task {
     display: flex;
 }
 
-#add_task #task, #add_task #taskOk {
+#add_task #task, #add_task #taskOk, #save, #notSave {
     background-color: var(--corBase);
     outline: 0;
     border: 0;
@@ -57,6 +58,13 @@ div#add_task {
 
     font-family: Consolas, sans-serif;
     font-size: 1rem;
+}
+
+input#save, input#notSave {
+    cursor: pointer;
+    border-top: 1px dotted black;
+
+    width: 100%;
 }
 
 #add_task #task {
@@ -70,7 +78,7 @@ div#add_task {
     cursor: pointer;
 }
 
-#add_task #taskOk:hover {
+#add_task #taskOk:hover, #save:hover, #notSave:hover {
     background-color: var(--cor2);
     color: white;
 

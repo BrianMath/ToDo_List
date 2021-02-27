@@ -27,7 +27,16 @@
             </div>
         </div>
 
-        <script src="script.js">
+        <div id="saveOrNot">
+            <input type="button" value="Salvar" id="save" onclick="saveList()">
+            <input type="button" value="Não salvar (F5)" id="notSave" onclick="delList()">
+        </div>
+
+        <script >
+            var list = document.querySelector("ul#tasks_list")
+
+            list.innerHTML = localStorage.getItem("Lista")
         </script>
+        <script src="script.js"></script>
     </body>
 </html>
